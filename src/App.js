@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import PDFGenerator from './PDFGenerator';
+import './App.css'
 
-function App() {
+const App = () => {
+  const pdfPaths = [
+   '../../S1.pdf',
+   '../../S2.pdf'
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+  
+    <div className="marquee-container">
+    <h1 className="glow">
+      CLICK ON DOWNLOAD BUTTON TO DOWNLOAD THE CONTENT
+    </h1>
+  </div>
+  
+      {pdfPaths.map((pdfPath, index) => (
+        <PDFGenerator key={index} pdfPath={pdfPath} pdfIndex={index} />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
