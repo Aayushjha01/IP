@@ -7,17 +7,11 @@ const PDFGenerator = ({ pdfPath, pdfIndex }) => {
   };
 
   return (
-    
-    
     <div className='container'>
-   
-      <div className="card">
-      
-      <button onClick={downloadPDF}>Download PDF</button>
+    <div className="card">
+     <button onClick={downloadPDF}>Download Set {pdfIndex+1}</button>
       </div>
     </div>
-   
   );
 };
-
 export default PDFGenerator;
